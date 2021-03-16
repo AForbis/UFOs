@@ -45,3 +45,27 @@ function doubleAddition(c, d) {
 
   //Refactored with fat arrows
   doubleAddition = (c, d) => addition(c, d) * 2;
+
+  //Practice for loops
+  let friends = ["Sarah", "Greg", "Cindy", "Jeff"];
+
+  function listLoop(userList) {
+    for (var i = 0; i < userList.length; i++) {
+      console.log(userList[i]);
+    }
+ }
+//print friends
+ console.log(listLoop(friends));
+
+ //For loop with veggies
+ var vegetables = ["Carrots", "Peas", "Lettuce", "Tomatoes"];
+
+ for (var i = 0; i < vegetables.length; i++) {
+     console.log("I love " + vegetables[i]);
+ }
+
+ //Loop through numbers without an array
+ for (var i = 0; i < 5; i++) {
+    console.log("I am " + i);
+ }
+ 
