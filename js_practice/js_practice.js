@@ -68,4 +68,11 @@ function doubleAddition(c, d) {
  for (var i = 0; i < 5; i++) {
     console.log("I am " + i);
  }
- 
+
+ // if-statement syntax
+if ( condition ) { code to execute }
+
+// pseudocode practice
+if (a date is entered) {
+    Filter the default data to show only the date entered
+};
