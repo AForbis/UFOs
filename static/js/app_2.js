@@ -60,7 +60,7 @@ function updateFilters() {
     filterTable();
   
 }
-console.log(updateFilters);
+  console.log(updateFilters)
 
   // 7. Use this function to filter the table when data is entered.
   function filterTable() {
@@ -70,9 +70,40 @@ console.log(updateFilters);
   
     // 9. Loop through all of the filters and keep any data that matches the filter values
 
-    console.log(filteredData);
+    console.log(filteredData)
 
-    Object.entries(filters).forEach(([key, value]) => {filteredData = filteredData.filter(row => row[key] === value);});
+    let date = d3.select("#datetime").property("value");
+    let city = d3.select("#city").property("value");
+    let state = d3.select("#state").property("value");
+    let country = d3.select("#country").property("value");
+    let shape = d3.select("#shape").property("value");
+
+    if (date) {
+      filteredData = filteredData.filter(row => row.values === date);
+    }
+
+    if (city) {
+      filteredData = filteredData.filter(row => row.values === city);
+    }
+
+    if (state) {
+      filteredData = filteredData.filter(row => row.values === state);
+    }
+
+    if (country) {
+      filteredData = filteredData.filter(row => row.values === country);
+    }
+
+    if (shape) {
+      filteredData = filteredData.filter(row => row.values === shape);
+    }
+
+    //if (filters) {
+      //filteredData = filteredData.filter(row => row.values === filters);
+    //}
+
+    //Object.entries(filters).forEach(([key, value]) => {filteredData = filteredData.filter(row => row[key] === value);});
+    
     console.log(filteredData);
 
     // 10. Finally, rebuild the table using the filtered data
