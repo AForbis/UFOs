@@ -32,6 +32,9 @@ var filters = {
   shape: "shape"
 };
 
+//var filters = {};
+console.log(filters)
+
 // 3. Use this function to update the filters. 
 function updateFilters() {
 
@@ -54,27 +57,32 @@ function updateFilters() {
     // 6. Call function to apply all filters and rebuild the table
     filterTable();
   
-  }
-  
+}
+  console.log(updateFilters)
+
   // 7. Use this function to filter the table when data is entered.
   function filterTable() {
   
     // 8. Set the filtered data to the tableData.
     let filteredData = tableData;
   
-    // 9. Loop through all of the filters and keep any data that
-    // matches the filter values
-    if (filters) {
+    // 9. Loop through all of the filters and keep any data that matches the filter values
 
-      filteredData = filteredData.filter(row => row.values === filters);
-    }
-  
+    console.log(filteredData)
+
+    //if (filters) {
+      //filteredData = filteredData.filter(row => row.values === filters);
+    //}
+
+    Object.entries(filters).forEach(([key, value]) => {filteredData = filteredData.filter(row => row[key] === value);});
+    
+    console.log(filteredData)
+
     // 10. Finally, rebuild the table using the filtered data
-    buildTable(tableData)
+    buildTable(filteredData);
   }
   
   // 2. Attach an event to listen for changes to each filter
-  // d3.selectAll("datetime", "city", "state", "country", "shape").on("click", updateFilters);
   d3.selectAll("input").on("change", updateFilters);
   
   // Build the table when the page loads
